@@ -5,12 +5,12 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Calcul PGCD Correction")]
+[assembly: AssemblyTitle("NombresPremier")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("Calcul PGCD Correction")]
-[assembly: AssemblyCopyright("Copyright ©  2017")]
+[assembly: AssemblyCompany("Isagri")]
+[assembly: AssemblyProduct("NombresPremier")]
+[assembly: AssemblyCopyright("Copyright © Isagri 2017")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("5de3be46-32fb-4c04-90e1-7c31e29091a6")]
+[assembly: Guid("f8772905-6fc8-45cf-945f-b1fcf2bc38eb")]
 
 // Version information for an assembly consists of the following four values:
 //
