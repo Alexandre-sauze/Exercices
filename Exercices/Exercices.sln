@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NombresPremierCorrection", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "trier un tableau", "trier un tableau\trier un tableau.csproj", "{F738D8F4-9C1C-4C80-8CE2-7EF1FC617B3D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TriTableau_correction", "TriTableau_correction\TriTableau_correction.csproj", "{9FA2E797-CB5A-43CA-89B2-D94183850E2A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{F738D8F4-9C1C-4C80-8CE2-7EF1FC617B3D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F738D8F4-9C1C-4C80-8CE2-7EF1FC617B3D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F738D8F4-9C1C-4C80-8CE2-7EF1FC617B3D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9FA2E797-CB5A-43CA-89B2-D94183850E2A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9FA2E797-CB5A-43CA-89B2-D94183850E2A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9FA2E797-CB5A-43CA-89B2-D94183850E2A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9FA2E797-CB5A-43CA-89B2-D94183850E2A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
