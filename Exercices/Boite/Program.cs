@@ -10,6 +10,16 @@ namespace Boite
     {
         static void Main(string[] args)
         {
+            Boite b1 = new Boite(30, 60, 20);
+            Boite b2 = new Boite(24, 56, 74, TypeMatière.métal);
+            Etiquette Eti = new Etiquette { Format = Formats.xl, Texte = "dkqsgfjd", Couleur = TypeCouleurs.Marron };
+            Console.WriteLine(Boite._nbBoite);
+            Boite b3 = new Boite(200, 400, 250);
+            b3.Etiqueter("Alexandre", true);
+            Boite b4 = new Boite(30, 60, 20);
+            b4.Etiqueter(Eti, Eti);
+            b1.Etiqueter("M.Dupont Jean", true);
+
 
         }
     }
@@ -18,47 +28,5 @@ namespace Boite
     public enum TypeCouleurs { Blanc, Bleu, Vert, Jaune, Orange, Rouge, Marron }
     public enum TypeMatière { carton, plastique, bois, métal}
 
-    public class Boite
-    {
-        #region Champs Privé
-        private double _hauteur = 30;
-        private double _largeur = 30;
-        private double _longueur = 30;
-        private TypeCouleurs _couleurs;
-        private TypeMatière _matières = TypeMatière.carton;
-        #endregion
-
-        #region propriétés
-        public double Hauteur
-        {
-            get { return _hauteur; }
-
-        }
-        public TypeCouleurs Couleurs
-        {
-            get { return _couleurs; }
-            set { _couleurs = value; }
-        }
-        public TypeMatière matières
-        {
-            get { return _matières; }
-        }
-        public double Volume
-        {
-            get { return _hauteur*_largeur*_longueur; }
-        }
-        #endregion
-
-        #region Methode Publique
-        public void Etiqueter(string destinataire)
-        {
-
-        }
-        public void Etiqueter(string destinataire, bool fragile)
-        {
-
-        }
-
-        #endregion
-    }
+    
 }

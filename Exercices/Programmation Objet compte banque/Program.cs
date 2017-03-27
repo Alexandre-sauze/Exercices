@@ -12,6 +12,14 @@ namespace Programmation_Objet_compte_banque
         {
             DateTime dt = new DateTime(2017, 02, 25);
             CompteBancaire cb = new CompteBancaire(dt, Typecompte.courant);
+            Carte carte = new Programmation_Objet_compte_banque.Carte
+            {
+                NumCompte = 1589879621475,
+                NumCarte = 75368115452,
+                DateExpiration = DateTime.Today.AddYears(2),
+                //CodeSecret = 7865,
+                CodeVérif = 423
+            };
             bool b = cb.ADécouvert;
             cb.Créditer(400);
             Console.WriteLine("Solde courant : {0}", cb.SoldeCourant);

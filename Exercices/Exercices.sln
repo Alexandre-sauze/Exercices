@@ -21,7 +21,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "compter Voyelles consonnes 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Login", "Login\Login.csproj", "{9429B786-EABF-4900-B74B-DD61417A6183}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Programmation Objet compte banque", "Programmation Objet compte banque\Programmation Objet compte banque.csproj", "{EEC707DC-5937-400E-8555-725BA63CC4B2}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "POO compte banque", "Programmation Objet compte banque\POO compte banque.csproj", "{EEC707DC-5937-400E-8555-725BA63CC4B2}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Boite", "Boite\Boite.csproj", "{54299DDD-C858-4452-AA3F-0D89042142E0}"
 EndProject
