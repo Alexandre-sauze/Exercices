@@ -13,7 +13,7 @@ namespace Trie_Voyelles_Consonnes
             // 1) Saisie du mot + création de la variable mot pour le stocker
             Console.WriteLine(@"Saisissez un mot SVP");
             string mot = Console.ReadLine();
-            int nbConsonnes, nbVoyelles;
+            int nbConsonnes, nbVoyelles=0;
             CompterConsonnes(mot, out nbConsonnes);
             Console.WriteLine("Le mot comporte {0} consonnes, {1} de voyelles.", nbConsonnes, nbVoyelles);
 
@@ -22,11 +22,11 @@ namespace Trie_Voyelles_Consonnes
         {
             for(int compteurMots = 0; compteurMots < mot.Length; compteurMots++)
             {
-                if (mot[compteurMots] != 'a'  )
+                //if (mot[compteurMots] != 'a'  )
 
             }
 
-
+            consonnes = 0;
 
 
         }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Véhicules
 {
-    public abstract class Véhicule
+    public abstract class Véhicule : IComparable
     {
         public string Nom { get; }
         public int NbRoues { get; }
@@ -20,6 +20,8 @@ namespace Véhicules
         }
         public abstract int PrixRevientKM { get; }
 
+
+
         public Véhicule(string nom, int nbRoues, Energies energie)
         {
             Nom = nom;
@@ -27,27 +29,31 @@ namespace Véhicules
             Energie = energie;
         }
         public abstract void CalculerConso();
-    }
 
-    
-    public class Voiture : Véhicule
-    {
-        public Voiture(string nom, Energies energie) : base(nom, 4, energie)
+        public int CompareTo(object obj)
         {
-
-        }
-
-        public override int PrixRevientKM
-        {
-            get
+            if (obj is Véhicule)
             {
-                return 12;
+                Véhicule v = (Véhicule)obj;
+                if (v.PrixRevientKM == PrixRevientKM)
+                {
+                    return 0;
+                }
+                else if (v.PrixRevientKM < PrixRevientKM)
+                {
+                    return -1;
+                }
+                else
+                {
+                    return +1;
+                }
             }
-        }
+            else
+                throw new ArgumentException();
 
-        public override void CalculerConso()
-        {
-            throw new NotImplementedException();
         }
     }
+
+
+
 }

@@ -44,6 +44,9 @@ namespace POO
         private decimal _soldeCourant;
         private decimal _découvertAutorisé;
         private Typecompte _type;
+        private int v1;
+        private DateTime today;
+        private int v2;
         #endregion
 
         /// <summary>
@@ -73,6 +76,13 @@ namespace POO
         {
             _dateCréation = dateCréa;
             _soldeCourant = solde;
+        }
+
+        public CompteBancaire(int v1, DateTime today, int v2)
+        {
+            this.v1 = v1;
+            this.today = today;
+            this.v2 = v2;
         }
 
         #region Propriété

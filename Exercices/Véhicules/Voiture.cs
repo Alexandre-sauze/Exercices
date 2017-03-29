@@ -6,10 +6,9 @@ using System.Threading.Tasks;
 
 namespace Véhicules
 {
-
-    public class Moto : Véhicule
+    public class Voiture : Véhicule
     {
-        public Moto(string nom, Energies energie) : base(nom, 2, energie)
+        public Voiture(string nom, Energies energie) : base(nom, 4, energie)
         {
 
         }

@@ -4,13 +4,15 @@ using System.Diagnostics;
 
 namespace POO
 {
-    public abstract class MoyenPaiment
+    public abstract class MoyenPaiment : IRenouvelable1
     {
         public long NumCompte { get; protected set; }
         public string NomTitulaire { get; set; }
         public string PrénomTitulaire { get; set; }
-        public DateTime DateDernierRenouvellement { get; set; }
 
+        public DateTime DateRenouvellement { get; private set; }
+            
+        
 
         public MoyenPaiment()
         {
@@ -27,20 +29,19 @@ namespace POO
         }
 
 
-        public virtual void Renouveler()
-        {
-            DateDernierRenouvellement = DateTime.Today;
-        }
-
-
         // Méthode de la classe Object redéfinie dans MoyenPaiement 
         public override string ToString()
         {
             return string.Format("Moyen de paiement associé au compte {0} de {1} {2}, renouvelé le {3:d}\n",
-                NumCompte, PrénomTitulaire, NomTitulaire, DateDernierRenouvellement);
+                NumCompte, PrénomTitulaire, NomTitulaire, DateRenouvellement);
         }
 
         public abstract string payer();
+
+        public virtual void Renouveler(DateTime date)
+        {
+            DateRenouvellement = date;
+        }
     }
 
 
@@ -65,9 +66,9 @@ namespace POO
 
 
         // Méthode redéfinie 
-        public override void Renouveler()
+        public override void Renouveler(DateTime date)
         {
-            base.Renouveler(); // appel de la méthode de la classe ancêtre (MoyenPaiement) 
+            base.Renouveler(date); // appel de la méthode de la classe ancêtre (MoyenPaiement) 
             DateExpiration = DateExpiration.AddYears(2);
         }
 
@@ -107,9 +108,9 @@ namespace POO
 
 
         // Méthode redéfinie 
-        public override void Renouveler()
+        public override void Renouveler(DateTime date)
         {
-            base.Renouveler(); // appel de la méthode de la classe ancêtre (MoyenPaiement) 
+            base.Renouveler(date); // appel de la méthode de la classe ancêtre (MoyenPaiement) 
             NumPremierChèque += NombreChèques;
         }
 
