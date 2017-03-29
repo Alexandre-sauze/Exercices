@@ -14,7 +14,6 @@ namespace Véhicules
             Console.WriteLine(V1.Description);
             Véhicule v2 = new Moto("kawasaki NinjaR", Energies.Essence);
             Console.WriteLine(v2.Description);
-
         }
     }
 
