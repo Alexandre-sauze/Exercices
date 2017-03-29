@@ -1,73 +1,131 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Diagnostics;
 
-namespace Programmation_Objet_compte_banque
+
+namespace POO
 {
-    public class MoyenPaiement
+    public abstract class MoyenPaiment
     {
-
-        public long Numcompte { get; set; }
-        public string nomTitulaire { get; set; }
+        public long NumCompte { get; protected set; }
+        public string NomTitulaire { get; set; }
         public string PrénomTitulaire { get; set; }
         public DateTime DateDernierRenouvellement { get; set; }
 
-        public MoyenPaiement()
+
+        public MoyenPaiment()
         {
 
+
         }
+
+
+        // Coonstructeur surchargé 
+        public MoyenPaiment(long numCpt)
+        {
+            NumCompte = numCpt;
+            Debug.WriteLine("Constructeur de MoyenPaiment");
+        }
+
 
         public virtual void Renouveler()
         {
             DateDernierRenouvellement = DateTime.Today;
         }
+
+
+        // Méthode de la classe Object redéfinie dans MoyenPaiement 
+        public override string ToString()
+        {
+            return string.Format("Moyen de paiement associé au compte {0} de {1} {2}, renouvelé le {3:d}\n",
+                NumCompte, PrénomTitulaire, NomTitulaire, DateDernierRenouvellement);
+        }
+
+        public abstract string payer();
     }
 
-    public class Carte:MoyenPaiement
+
+
+
+    public class Carte : MoyenPaiment
     {
         public long NumCarte { get; set; }
-        public long NumCompte { get; set; }
+
         public DateTime DateExpiration { get; set; }
         public int CodeVérif { get; set; }
         public int CodeSecret { get; set; }
 
+
+
+
+        // Constructeur qui appelle celui de la classe ancêtre (MoyenPaiement) 
+        public Carte(long numCpt) : base(numCpt)
+        {
+            Debug.WriteLine("Constructeur de Carte");
+        }
+
+
+        // Méthode redéfinie 
         public override void Renouveler()
         {
-            base.Renouveler();
+            base.Renouveler(); // appel de la méthode de la classe ancêtre (MoyenPaiement) 
             DateExpiration = DateExpiration.AddYears(2);
         }
 
+
+        // Méthode redéfinie 
+        public override string ToString()
+        {
+            string s1 = base.ToString(); // appel de la méthode de la classe ancêtre (MoyenPaiement) 
+
+
+            string s2 = string.Format("Carte de N°{0}, de code secret {1} qui expire le {2:d}",
+                NumCarte, CodeSecret, DateExpiration);
+
+
+            return s1 + s2;
+        }
+
+        public override string payer()
+        {
+            return string.Format("Le commerçant saisit le montant.\nJe compose mon code.\nLe commerçant me donne la facturette");
+        }
+
     }
 
-    public class Chéquier : MoyenPaiement
+
+    public class Chéquier : MoyenPaiment
     {
-        public int NombreChèque { get; set; }
+        public int NombreChèques { get; set; }
         public long NumPremierChèque { get; set; }
 
-            public override void Renouveler()
+
+        // Constructeur qui appelle celui de la classe ancêtre (MoyenPaiement) 
+        public Chéquier(long numCpt) : base(numCpt)
         {
-            base.Renouveler();
-            NumPremierChèque += NombreChèque;
+
         }
 
-        public override string ToString()
+
+        // Méthode redéfinie 
+        public override void Renouveler()
         {
-            return base.ToString() + string.Format
+            base.Renouveler(); // appel de la méthode de la classe ancêtre (MoyenPaiement) 
+            NumPremierChèque += NombreChèques;
         }
 
+
+        // Méthode redéfinie 
         public override string ToString()
         {
-            return string.Format("Moyen de paiementassocié au compte {0} de {1} {2}, renouvelé le {3:d}", Numcompte, PrénomTitulaire,
-                nomTitulaire);
+            // appel de la méthode de la classe ancêtre (MoyenPaiement) 
+            return base.ToString() + string.Format("Chéquier de {0} chèques, dont le premier a le N°{1}",
+                NombreChèques, NumPremierChèque);
         }
 
-        public override string ToString()
+        public override string payer()
         {
-            String s = base.ToString();
-            return s + ToString() + string.Format("Carte de n°{0}, de code secret {1} qui expire le {2}", NumCarte, CodeSecret, DateExpiration);
+            return string.Format("Je remplis et je signe le chèque. Je le donne au commerçant");
         }
+
     }
-
 }

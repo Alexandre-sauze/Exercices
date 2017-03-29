@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Programmation_Objet_compte_banque
+namespace POO
 {
     class Program
     {
@@ -12,9 +12,8 @@ namespace Programmation_Objet_compte_banque
         {
             DateTime dt = new DateTime(2017, 02, 25);
             CompteBancaire cb = new CompteBancaire(dt, Typecompte.courant);
-            Carte carte = new Programmation_Objet_compte_banque.Carte
+            Carte carte = new Carte(1651561)
             {
-                NumCompte = 1589879621475,
                 NumCarte = 75368115452,
                 DateExpiration = DateTime.Today.AddYears(2),
                 //CodeSecret = 7865,

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Véhicules
 {
-    public class Véhicule
+    public abstract class Véhicule
     {
         public string Nom { get; }
         public int NbRoues { get; }
@@ -18,6 +18,7 @@ namespace Véhicules
                 return string.Format("Véhicule {0} roule sur {1} roues et à l'énergie {2}", Nom, NbRoues, Energie);
             }
         }
+        public abstract int PrixRevientKM { get; }
 
         public Véhicule(string nom, int nbRoues, Energies energie)
         {
@@ -25,6 +26,7 @@ namespace Véhicules
             NbRoues = nbRoues;
             Energie = energie;
         }
+        public abstract void CalculerConso();
     }
 
     
@@ -33,6 +35,19 @@ namespace Véhicules
         public Voiture(string nom, Energies energie) : base(nom, 4, energie)
         {
 
+        }
+
+        public override int PrixRevientKM
+        {
+            get
+            {
+                return 12;
+            }
+        }
+
+        public override void CalculerConso()
+        {
+            throw new NotImplementedException();
         }
     }
 }
