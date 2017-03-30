@@ -48,6 +48,8 @@ namespace Véhicules
                 ListVéhicule.Add(v.Key, v.Value);
             }
 
+            //Véhicules.Clear();
+
             foreach (var v in ListVéhicule)
             {
                 Console.WriteLine("{0} € : {1} ", v.Key, v.Value.Nom);
