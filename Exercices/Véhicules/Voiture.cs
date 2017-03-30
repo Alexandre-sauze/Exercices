@@ -12,6 +12,10 @@ namespace Véhicules
         {
 
         }
+        public Voiture(string nom, int prix) : base(nom, prix)
+        {
+
+        }
 
         public override int PrixRevientKM
         {

@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Boite;
+using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -17,6 +19,7 @@ namespace Boites
         #endregion
 
         #region propriétés
+        public List<Article> Articles { get; set; }
         public double Hauteur
         {
             get { return _hauteur; }
@@ -27,6 +30,10 @@ namespace Boites
         public double Volume
         {
             get { return _hauteur * _largeur * _longueur; }
+        }
+
+        public static int Compteur {
+            get { return _nbBoite; }
         }
         #endregion
 
@@ -64,17 +71,22 @@ namespace Boites
         #endregion
 
         #region Constructeur
-        public Boite(double hauteur, double largeur, double longueur)
+        public Boite(double hauteur, double largeur, double longueur):this()
         {
             _hauteur = hauteur;
             _largeur = largeur;
             _longueur = longueur;
-            _nbBoite++;
         }
         public Boite(double hauteur, double largeur, double longueur, TypeMatière Matière) : this(hauteur, largeur, longueur)
         {
             _matières = Matière;
 
+        }
+
+        public Boite()
+        {
+            _nbBoite++;
+            Articles = new List<Article>();
         }
         #endregion
     }

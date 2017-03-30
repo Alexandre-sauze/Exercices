@@ -11,6 +11,7 @@ namespace Véhicules
         public string Nom { get; }
         public int NbRoues { get; }
         public Energies Energie { get; }
+        public int Prix { get; }
         public virtual string Description
         {
             get
@@ -28,6 +29,11 @@ namespace Véhicules
             NbRoues = nbRoues;
             Energie = energie;
         }
+        public Véhicule(string nom, int prix)
+        {
+            Nom = nom;
+            Prix = prix;
+        }
         public abstract void CalculerConso();
 
         public int CompareTo(object obj)
@@ -35,11 +41,11 @@ namespace Véhicules
             if (obj is Véhicule)
             {
                 Véhicule v = (Véhicule)obj;
-                if (v.PrixRevientKM == PrixRevientKM)
+                if (v.Prix == Prix)
                 {
                     return 0;
                 }
-                else if (v.PrixRevientKM < PrixRevientKM)
+                else if (v.Prix < Prix)
                 {
                     return -1;
                 }
